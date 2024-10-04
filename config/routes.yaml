@@ -1,5 +1,4 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+nurse_index:
+    path: /nurse/index
+    controller: App\Controller\NurseController::getAll
+    methods: GET
