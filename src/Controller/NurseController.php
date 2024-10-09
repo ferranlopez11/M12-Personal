@@ -43,19 +43,16 @@ class NurseController extends AbstractController
     #[Route('/login', name: 'nurse_login', methods: ['POST'])]
     public function login(Request $request): JsonResponse
     {
-        // Lista de enfermeros simulada con credenciales
         $nurses = [
-            ['username' => 'alice', 'password' => 'password123'],
-            ['username' => 'bob', 'password' => 'bobpassword'],
-            ['username' => 'clara', 'password' => 'clarasecret']
+            ['username' => 'juanperez', 'password' => 'juan123'],
+            ['username' => 'marialopez', 'password' => 'maria321'],
+            ['username' => 'carlosgarcia', 'password' => 'cgarcia000']
         ];
 
-        // Extraer los datos de la solicitud POST
         $data = json_decode($request->getContent(), true);
         $username = $data['username'] ?? '';
         $password = $data['password'] ?? '';
 
-        // Validar las credenciales
         foreach ($nurses as $nurse) {
             if ($nurse['username'] === $username && $nurse['password'] === $password) {
                 return new JsonResponse(['success' => true, 'message' => 'Login successful']);
