@@ -59,7 +59,6 @@ class NurseController extends AbstractController
             }
         }
 
-        // Si no coinciden las credenciales
         return new JsonResponse(['success' => false, 'message' => 'Invalid credentials'], 401);
     }
 }
